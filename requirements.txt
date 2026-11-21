@@ -1,0 +1,19 @@
+# US-PT Keyboard Fix - Dependências
+# Estas são dependências do sistema; bibliotecas Python são minimalistas.
+
+# Dependências de sistema (instalar via apt):
+#   gsettings-backend (geralmente já vem com gnome-desktop)
+#   python3 (>=3.8)
+#   pip3 (para instalar pacotes Python opcionais)
+
+# Dependências Python (opcionais, usadas por recursos avançados):
+pytest>=7.4.0  # Para testes
+pytest-cov>=4.0.0  # Cobertura de testes
+
+# Ferramentas do sistema que a ferramenta deteta e usa:
+# - localectl (systemd)
+# - setxkbmap (X11)
+# - gsettings (GNOME)
+# - xkbcomp (debug/inspecção)
+# - xfconf-query (XFCE)
+# - kwriteconfig (KDE)

@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.dist/
+.coverage
+.tox/
+.venv/
+venv/
+env/
+venv/
+
+# OS specific
+.DS_Store
+Linux/*
+
+# Project specific
+~/.local/share/uspt-backup/
+~/.Xcompose
+~/.config/uspt/
+
+# Environment
+.env
+# Set larger default compiler width

@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "us-pt-keyboard-fix"
+version = "0.1.0"
+description = "Ferramenta para diagnóstico e correção de layouts de teclado internacional em Linux"
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = "keyboard, us-pt, linux, xkb, compose"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: X11 Applications :: GNOME",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Desktop Environment :: Window Managers",
+    "Topic :: System :: Systems Administration",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.0.0",
+    "black>=22.0",
+    "flake8>=6.0",
+]
+
+[project.scripts]
+uspt = "uspt.main:main"
+
+[tool.setuptools.packages.find]
+include = ["uspt", "uspt.*"]
