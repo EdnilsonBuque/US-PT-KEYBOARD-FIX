@@ -8,7 +8,7 @@ Qualquer tipo de contribuição é bem-vinda: desde da correção de bugs e melh
 
 ### 1. Fork and branch
 ```bash
-git fork https://github.com/SEU-USUARIO/us-pt-keyboard-fix.git
+git fork https://github.com/EdnilsonBuque/US-PT-KEYBOARD-FIX.git
 git checkout -b feature/minha-contribuicao
 ```
 
@@ -31,7 +31,7 @@ git commit -m "doc: update INSTALLATION.md with new install method"
 ### Setup local
 ```bash
 # Clonar
-git clone https://github.com/SEU-USUARIO/us-pt-keyboard-fix.git
+git clone https://github.com/EdnilsonBuque/US-PT-KEYBOARD-FIX.git
 cd us-pt-keyboard-fix
 
 # Instalar dependências

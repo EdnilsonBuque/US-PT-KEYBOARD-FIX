@@ -58,7 +58,7 @@ problemas de configuração de teclados em sistemas Linux, focado no ambiente GN
 ```bash
 sudo apt update
 sudo apt install git python3 -y
-git clone https://github.com/SEU-USUARIO/us-pt-keyboard-fix.git
+git clone https://github.com/EdnilsonBuque/US-PT-KEYBOARD-FIX.git
 cd us-pt-keyboard-fix
 chmod +x scripts/install.sh
 ./scripts/install.sh
