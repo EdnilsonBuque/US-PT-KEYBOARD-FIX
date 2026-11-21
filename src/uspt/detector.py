@@ -2,7 +2,7 @@
 
 Responsável por responder às perguntas fundamentais:
 - Que distribuição estamos?
-- Que ambiente gráfico (GNOME, KDE, etc.)?
+- Que ambiente gráfico (GNOME, KDE, etc.) ?
 - Wayland ou X11?
 - Layout atual?
 - Quais as ferramentas disponíveis?
