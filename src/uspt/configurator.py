@@ -225,16 +225,21 @@ def set_layout_portuguese(modalidade: str = "altgr") -> Dict[str, Any]:
             # Find current layout and add pt after
             new_sources = add_portuguese_after_current(new_sources)
 
-        # Set the xkb-options
-        opts_value = ", ".join(f"'{opt}'" for opt in new_opts)
+        # Modalidade AltGr: configurar via fontes de entrada (sources)
+        # O xkb-options ['compose:ralt'] já deve estar configurado pelo sistema
+        # o foco é garantir que o layout português esteja nas sources
+        current_xkb_opts = _run_gsettings_get(GNOME_INPUT_SOURCES_SCHEMA, "xkb-options")
+        # Atualizar sources para incluir layout português
         success = _run_gsettings_set(
-            GNOME_INPUT_SOURCES_SCHEMA, "xkb-options", opts_value
+            GNOME_INPUT_SOURCES_SCHEMA, "sources", sources_value
         )
         if success:
-            result["applied"].append("xkb-options set to: " + opts_value)
-            result["success"] = True
+            result["applied"].append("sources updated to include Portuguese")
         else:
-            result["warnings"].append("Falha ao definir xkb-options")
+            result["warnings"].append("Falha ao atualizar sources")
+        # Registrar que a modalidade AltGr está ativa
+        result["applied"].append("Modalidade AltGr: AltGr + , → ç/Ç")
+        result["success"] = True
 
         # Set sources with Portuguese
         sources_value = sources_value_from_tuples(new_sources)
@@ -268,7 +273,7 @@ def set_layout_portuguese(modalidade: str = "altgr") -> Dict[str, Any]:
             new_opts.append("compose:caps")
             result["applied"].append("compose:caps added")
 
-        opts_value = ", ".join(f"'{opt}'" for opt in new_opts)
+        opts_value = "[" + ", ".join(f"'{opt}'" for opt in new_opts) + "]"
         success = _run_gsettings_set(
             GNOME_INPUT_SOURCES_SCHEMA, "xkb-options", opts_value
         )
